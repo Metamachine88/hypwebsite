@@ -5,6 +5,10 @@ import React from 'react';
 
 const INSTAGRAM_URL = 'https://instagram.com/hyp_gestion.inmobiliaria';
 
+// +56 9 7197 7742  -> 56971977742
+const WHATSAPP_URL =
+  'https://wa.me/56971977742?text=Hola%20Pedro%2C%20vengo%20desde%20la%20web%20de%20H%26P%20y%20me%20interesa%20una%20asesoría.';
+
 function ExternalButton({
   href,
   children,
@@ -37,7 +41,7 @@ function ExternalButton({
 export default function Page() {
   return (
     <main className="min-h-screen text-white">
-      {/* 🔥 FONDO BURDEO / VINO (reemplaza el azul) */}
+      {/* Fondo burdeo / vino */}
       <div
         aria-hidden
         className="fixed inset-0 -z-10"
@@ -92,6 +96,12 @@ export default function Page() {
                 Ver propiedades en Instagram
               </ExternalButton>
 
+              <a
+                href="#zonas"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/5"
+              >
+                Ver zonas ↓
+              </a>
             </div>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -161,8 +171,40 @@ export default function Page() {
       {/* Footer */}
       <footer className="pb-10 text-center text-xs text-white/50">
         © {new Date().getFullYear()} H&amp;P Gestión Inmobiliaria ·{' '}
-        
+    
       </footer>
+
+      {/* ✅ Botón flotante WhatsApp (típico) */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Hablar con Pedro por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-4 py-3 shadow-lg shadow-black/30 transition hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/70"
+      >
+        {/* Icono WhatsApp */}
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+        >
+          <path
+            fill="white"
+            d="M19.11 17.41c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.62.14-.18.27-.71.87-.87 1.05-.16.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.33-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47h-.53c-.18 0-.47.07-.71.34-.25.27-.94.91-.94 2.22s.96 2.58 1.1 2.76c.14.18 1.89 2.88 4.58 4.04.64.27 1.14.43 1.53.55.64.2 1.23.17 1.69.1.52-.08 1.58-.64 1.8-1.26.22-.62.22-1.15.16-1.26-.06-.11-.25-.18-.52-.32Z"
+          />
+          <path
+            fill="white"
+            d="M16.02 3C8.84 3 3 8.77 3 15.86c0 2.27.61 4.48 1.77 6.42L3 29l6.9-1.74a13.1 13.1 0 0 0 6.12 1.5h.01c7.18 0 13.02-5.77 13.02-12.86C29.05 8.77 23.2 3 16.02 3Zm0 23.47h-.01c-1.93 0-3.82-.5-5.46-1.45l-.39-.23-4.1 1.03 1.1-3.97-.25-.4a11.1 11.1 0 0 1-1.72-5.6c0-5.81 4.8-10.53 10.73-10.53 5.92 0 10.73 4.72 10.73 10.53 0 5.8-4.81 10.52-10.73 10.52Z"
+          />
+        </svg>
+
+        <span className="text-sm font-semibold text-white">
+          Hablemos!
+        </span>
+      </a>
     </main>
   );
 }
